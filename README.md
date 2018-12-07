@@ -4,6 +4,11 @@ Write a program that allows you to **query distributed log files on multiple mac
 output on your terminal (with the appropriate lines to designate which log entries come from).
 
 # MP2 Membership List Implementation  
+We design our system that each node in the system will pick 4 neighbors (2 successors/2 predecessors) to send heartbeat signals to ensure  completeness up to 4 failures. To make sure that a failure must be detected within 2 seconds, we set the timeout equals to the upper   limit: 2 seconds. Moreover, to compromise between bandwidth and false positive rate given the timeout, we set the heartbeat period to be 1 second.
+
+Each node will maintain a membership list locally, where Node ID contains the information of timestamp and node’s IP address, Heartbeat   Counter is used to decide the priority between different messages (the local membership list will be updated accordingly only if the node receives a message whose heartbeat counter is larger than the value stored in the local membership list), and Local Time is used for   failure detection.  
+
+**Details**  
 This service maintains, at each machine in the system (at a daemon process), a list of the other machines that are connected and up.  
 This membership list needs to be updated whenever:  
 1. A machine (or its daemon) **joins** the group;  
