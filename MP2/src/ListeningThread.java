@@ -58,7 +58,7 @@ public class ListeningThread extends Thread {
                     if (values != null) {
                         Daemon.membershipList.remove(ID);
                         Daemon.updateNeighbors();
-                        Daemon.writeLog("REMOVE", ID);
+                        Daemon.writeLog("LEAVE", ID);
                     }
             }
         }
