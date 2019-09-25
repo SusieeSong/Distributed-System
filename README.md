@@ -1,6 +1,7 @@
 # Distributed-File-System-Development
-Co-Contributor @YicongY https://github.com/YicongY
-
+Co-Contributor https://github.com/YicongY 
+               https://github.com/CheLinHuang 
+              
 # Project Highlight
 - Constructed a master server for workload distribution, and **membership control**  with time-bounded completeness
 - Designed the system tolerable to failures through a **ring-based heart-beating** mechanism
