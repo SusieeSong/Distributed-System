@@ -48,12 +48,12 @@ To deal with re-replication, first we maintain a neighbor list containing the fi
 **2. Node Removed:**    
 If the successors of a node are changed, we check all the SDFS files stored on this node: for each file sdfsfilename, if the node is the new targetNode corresponding to the file, we send the file to its new first two successors.  
 
-**Quorum Read/Write**   
+**3. Quorum Read/Write:**   
 To write a file sdfsfilename, the client will send request to the corresponding coordinator, and the coordinator will replicate the file to its first 2 successors, once 2 of the 3 (quorum condition) writing processes are done, the coordinator will inform the client that the writing process is finished. At the same time, the coordinator will still try to write the file to the last replica.
   
 To read a file sdfsfilename, based on our design, the coordinator will always keep the newest version of sdfsfilename by caching, then the coordinator could directly return the file back to the client, which is fast.
 
-**Write-Write Conflict Detection**  
+**4. Write-Write Conflict Detection:**  
 For detecting write-write conflict regarding to sdfsfilename, the client will first send a message to the coordinator to ask it check the timestamp of sdfsfilename. If the last update time of the file is within 1 minute, the coordinator will ask the client to confirm the write.
 
 
