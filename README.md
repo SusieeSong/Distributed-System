@@ -1,6 +1,5 @@
 # Distributed-File-System-Development
-Co-Contributor https://github.com/YicongY 
-               https://github.com/CheLinHuang 
+Co-Contributor https://github.com/YicongY && https://github.com/CheLinHuang 
               
 # Project Highlight
 - Constructed a master server for workload distribution, and **membership control**  with time-bounded completeness
