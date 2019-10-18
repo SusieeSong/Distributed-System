@@ -57,4 +57,3 @@ To read a file sdfsfilename, based on our design, the coordinator will always ke
 For detecting write-write conflict regarding to sdfsfilename, the client will first send a message to the coordinator to ask it check the timestamp of sdfsfilename. If the last update time of the file is within 1 minute, the coordinator will ask the client to confirm the write.
 
 
-# Leetcode-Notes
